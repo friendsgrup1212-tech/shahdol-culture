@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -242,7 +241,6 @@ body {
     border-radius: 4px;
 }
 
-
 .slide1 {
     background-image: url('https://cdn.s3waas.gov.in/s354229abfcfa5649e7003b83dd4755294/uploads/2026/01/17676144622251.jpg');
     background-size: cover;
@@ -251,14 +249,19 @@ body {
     background-color: #603080;
 }
 
-
 .slide2 {
-    background-image: url('images/tourism.jpg');
+    background-image: url('https://cdn.s3waas.gov.in/s354229abfcfa5649e7003b83dd4755294/uploads/2023/03/2023031238.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #216b4a;
 }
 
 .slide3 {
-    background-image: url('images/district.jpg');
+    background-image: url('https://cdn.s3waas.gov.in/s354229abfcfa5649e7003b83dd4755294/uploads/2023/03/2023031264.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #285b85;
 }
 
@@ -280,13 +283,40 @@ body {
     font-size: 17px;
 }
 
-/* LATEST NEWS */
+/* CONTAINER & VIDEO SECTION */
 .container {
     max-width: 1150px;
     width: 90%;
     margin: auto;
 }
 
+.video-section {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.video-section h2 {
+    color: #704800;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #0003;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* LATEST NEWS */
 .news {
     display: flex;
     align-items: center;
@@ -641,7 +671,6 @@ footer p, footer a {
 
 <!-- HEADER -->
 <header class="header">
-
     <div class="logo-area">
         <div class="logo">S</div>
         <div class="logo-text">
@@ -651,25 +680,19 @@ footer p, footer a {
     </div>
 
     <div class="search-box">
-        <input type="text" id="searchInput"
-        placeholder="Search District Information...">
+        <input type="text" id="searchInput" placeholder="Search District Information...">
         <button onclick="searchSite()">⌕</button>
     </div>
 
     <div class="digital">Digital Shahdol</div>
-
 </header>
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
-
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
         <ul class="nav-links" id="navLinks">
-
             <li><a href="index.html" class="active">Home</a></li>
-
             <li class="dropdown">
                 <a href="about.html">About District ▾</a>
                 <ul class="dropdown-menu">
@@ -678,7 +701,6 @@ footer p, footer a {
                     <li><a href="about.html#geography">Geography</a></li>
                 </ul>
             </li>
-
             <li class="dropdown">
                 <a href="education.html">Education ▾</a>
                 <ul class="dropdown-menu">
@@ -686,10 +708,8 @@ footer p, footer a {
                     <li><a href="education.html#schools">Schools</a></li>
                 </ul>
             </li>
-
             <li><a href="contact.html">Directory</a></li>
             <li><a href="contact.html">Contact Officials</a></li>
-
             <li class="dropdown">
                 <a href="tourism.html">Tourism ▾</a>
                 <ul class="dropdown-menu">
@@ -697,19 +717,15 @@ footer p, footer a {
                     <li><a href="tourism.html#temples">Temples</a></li>
                 </ul>
             </li>
-
             <li><a href="agriculture.html">Agriculture</a></li>
             <li><a href="schemes.html">Schemes</a></li>
             <li><a href="contact.html">Contact</a></li>
-
         </ul>
-
     </div>
 </nav>
 
 <!-- HERO SLIDER -->
 <section class="hero">
-
     <div class="slide slide1 active">
         <div class="slide-content">
             <div>
@@ -745,256 +761,12 @@ footer p, footer a {
         <button onclick="toggleSlider()" id="pauseBtn">Ⅱ</button>
         <button onclick="changeSlide(1)">❯</button>
     </div>
-
 </section>
 
-<!-- LATEST NEWS -->
+<!-- VIDEO SECTION -->
 <div class="container">
-    <div class="news">
-        <div class="news-title">Latest News</div>
-        <div class="news-text">
-            <a href="schemes.html">
-                शहडोल जिले की नवीनतम सूचनाएँ और महत्वपूर्ण घोषणाएँ यहाँ देखें।
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- QUICK LINKS -->
-<div class="container">
-    <div class="quick-links">
-
-        <a href="contact.html" class="quick-card">
-            <div class="quick-icon">🏢</div>
-            <h3>E-Office</h3>
-        </a>
-
-        <a href="contact.html" class="quick-card">
-            <div class="quick-icon">📞</div>
-            <h3>Telephone Directory</h3>
-        </a>
-
-        <a href="tourism.html" class="quick-card">
-            <div class="quick-icon">🏞️</div>
-            <h3>Tourist Places</h3>
-        </a>
-
-        <a href="education.html" class="quick-card">
-            <div class="quick-icon">🎓</div>
-            <h3>Education</h3>
-        </a>
-
-        <a href="schemes.html" class="quick-card">
-            <div class="quick-icon">📋</div>
-            <h3>Government Schemes</h3>
-        </a>
-
-    </div>
-</div>
-
-<!-- DISTRICT INFORMATION -->
-<div class="container">
-
-    <div class="section-title">
-        <h2>District Information</h2>
-        <p>शहडोल जिले से जुड़ी महत्वपूर्ण जानकारी</p>
-    </div>
-
-    <div class="info-grid">
-
-        <div class="info-card">
-            <div class="icon">🏛️</div>
-            <h3>About Shahdol</h3>
-            <p>शहडोल जिले का इतिहास, भौगोलिक स्थिति और सामान्य परिचय जानें।</p>
-            <a href="about.html">Read More →</a>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🎓</div>
-            <h3>Education</h3>
-            <p>जिले के स्कूल, कॉलेज और शैक्षणिक संस्थानों की जानकारी।</p>
-            <a href="education.html">Read More →</a>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🏥</div>
-            <h3>Health Services</h3>
-            <p>अस्पतालों, स्वास्थ्य केंद्रों और चिकित्सा सेवाओं की जानकारी।</p>
-            <a href="hospitals.html">Read More →</a>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🌾</div>
-            <h3>Agriculture</h3>
-            <p>कृषि, किसानों, फसलों और कृषि विभाग की जानकारी।</p>
-            <a href="agriculture.html">Read More →</a>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">🛕</div>
-            <h3>Tourism</h3>
-            <p>शहडोल के प्रसिद्ध मंदिरों और पर्यटन स्थलों की जानकारी।</p>
-            <a href="tourism.html">Read More →</a>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">📜</div>
-            <h3>Government Schemes</h3>
-            <p>केंद्र और मध्यप्रदेश सरकार की योजनाओं की जानकारी।</p>
-            <a href="schemes.html">Read More →</a>
-        </div>
-
-    </div>
-</div>
-
-<!-- ABOUT SHAH DOL -->
-<section class="about">
-    <div class="container about-content">
-
-        <div>
-            <h2>About District Shahdol</h2>
-            <p>
-                शहडोल मध्यप्रदेश का एक महत्वपूर्ण जिला है।
-                इस वेबसाइट का उद्देश्य जिले के नागरिकों,
-                विद्यार्थियों, किसानों और पर्यटकों को
-                जिले से संबंधित महत्वपूर्ण जानकारी एक ही
-                स्थान पर उपलब्ध कराना है।
-            </p>
-            <br>
-            <a href="about.html" style="color:#966500;font-weight:bold;">
-                Know More About Shahdol →
-            </a>
-        </div>
-
-        <div class="about-image">
-            SHAHDOL MADHYA PRADESH
-        </div>
-
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-grid">
-
-        <div>
-            <h3>District Shahdol</h3>
-            <p>शहडोल जिला सूचना पोर्टल</p>
-            <p>मध्यप्रदेश, भारत</p>
-        </div>
-
-        <div>
-            <h3>Important Links</h3>
-            <a href="about.html">About District</a>
-            <a href="education.html">Education</a>
-            <a href="tourism.html">Tourism</a>
-            <a href="schemes.html">Government Schemes</a>
-        </div>
-
-        <div>
-            <h3>Contact & Help</h3>
-            <a href="contact.html">Contact Us</a>
-            <a href="contact.html">Directory</a>
-            <a href="contact.html">Help & Support</a>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Shahdol District Information Portal |
-        Designed for Educational Project
-    </div>
-
-</footer>
-
-<button class="top-button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    ↑
-</button>
-
-<script>
-
-// MOBILE MENU
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-}
-
-// SLIDER
-let currentSlide = 0;
-let slides = document.querySelectorAll(".slide");
-let sliderTimer;
-let paused = false;
-
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add("active");
-}
-
-function changeSlide(direction) {
-    showSlide(currentSlide + direction);
-}
-
-function startSlider() {
-    clearInterval(sliderTimer);
-    sliderTimer = setInterval(() => {
-        if (!paused) changeSlide(1);
-    }, 4000);
-}
-
-function toggleSlider() {
-    paused = !paused;
-    document.getElementById("pauseBtn").textContent =
-        paused ? "▶" : "Ⅱ";
-}
-
-startSlider();
-
-// SEARCH
-function searchSite() {
-    let value = document.getElementById("searchInput")
-        .value.trim().toLowerCase();
-
-    if (!value) {
-        alert("कृपया Search में कुछ लिखें।");
-        return;
-    }
-
-    let pages = {
-        "about": "about.html",
-        "history": "about.html",
-        "education": "education.html",
-        "college": "education.html",
-        "school": "education.html",
-        "tourism": "tourism.html",
-        "temple": "tourism.html",
-        "hospital": "hospitals.html",
-        "health": "hospitals.html",
-        "agriculture": "agriculture.html",
-        "farm": "agriculture.html",
-        "scheme": "schemes.html",
-        "yojana": "schemes.html",
-        "contact": "contact.html"
-    };
-
-    for (let key in pages) {
-        if (value.includes(key)) {
-            window.location.href = pages[key];
-            return;
-        }
-    }
-
-    alert("इस जानकारी का पेज अभी उपलब्ध नहीं है।");
-}
-
-// ENTER KEY SEARCH
-document.getElementById("searchInput")
-.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") searchSite();
-});
-
-</script>
-
-</body>
-</html>
-
+    <div class="video-section">
+        <h2>Shahdol District Overview Video</h2>
+        <div class="video-container">
+            <!-- Yahan apni video ka path dein, jaise: videos/shahdol.mp4 -->
+            <video controls poster="
