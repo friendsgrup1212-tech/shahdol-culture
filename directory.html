@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Directory | District Shahdol</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#171717;
+}
+
+/* GOVERNMENT BAR */
+.topbar{
+    height:36px;
+    border-bottom:1px solid #ccc;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 12%;
+    font-size:12px;
+}
+
+.gov{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.flag{
+    font-size:22px;
+}
+
+.top-icons{
+    color:#795000;
+    font-size:19px;
+}
+
+/* HEADER */
+.header{
+    min-height:118px;
+    padding:15px 12%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#087b36,#e2b324);
+    border:4px solid #d9a900;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo-text p{
+    font-size:19px;
+    margin-bottom:4px;
+}
+
+.logo-text h2{
+    font-size:22px;
+}
+
+.search{
+    width:36%;
+    height:48px;
+    display:flex;
+    border:2px solid #aaa;
+    border-bottom:4px solid #795000;
+    border-radius:9px 9px 0 0;
+}
+
+.search input{
+    flex:1;
+    min-width:0;
+    border:none;
+    outline:none;
+    padding:12px;
+    font-size:15px;
+}
+
+.search button{
+    border:none;
+    background:white;
+    color:#795000;
+    font-size:22px;
+    padding:0 15px;
+    cursor:pointer;
+}
+
+.digital{
+    font-size:20px;
+    font-weight:bold;
+    color:#23845a;
+}
+
+/* NAVIGATION */
+.navbar{
+    border-top:1px solid #bbb;
+    border-bottom:1px solid #bbb;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-container{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    display:block;
+    text-decoration:none;
+    color:#111;
+    padding:15px 13px;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#956300;
+    color:white;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:235px;
+    background:#946000;
+    list-style:none;
+    box-shadow:0 5px 15px #0002;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+.dropdown-menu a{
+    color:white;
+    padding:13px 15px;
+    border-bottom:1px solid #ffffff25;
+}
+
+.dropdown-menu a:hover{
+    background:#704500;
+}
+
+.menu-btn{
+    display:none;
+    font-size:29px;
+    background:white;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+}
+
+/* GALLERY */
+.gallery{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    overflow:hidden;
+}
+
+.gallery img{
+    width:100%;
+    height:108px;
+    object-fit:cover;
+}
+
+/* MAIN CONTAINER */
+.container{
+    max-width:1240px;
+    width:90%;
+    margin:auto;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 0 35px;
+    font-size:15px;
+}
+
+.breadcrumb a{
+    color:#795000;
+    text-decoration:none;
+}
+
+.social{
+    display:flex;
+    gap:18px;
+}
+
+.social a{
+    color:#795000;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* PAGE TITLE */
+.page-title{
+    font-size:30px;
+    margin-bottom:32px;
+    color:#111;
+}
+
+/* DIRECTORY CATEGORY MENU */
+.directory-menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.directory-menu a{
+    padding:11px 16px;
+    background:#fff0d1;
+    border:1px solid #ead8ae;
+    border-radius:4px;
+    color:#684400;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.directory-menu a:hover{
+    background:#956300;
+    color:white;
+}
+
+/* SECTION HEADING */
+.section-heading{
+    font-size:25px;
+    margin:25px 0 15px;
+    color:#111;
+}
+
+/* TABLE */
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+    margin-bottom:18px;
+}
+
+table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#fff0d1;
+    color:#654000;
+}
+
+th{
+    text-align:left;
+    padding:13px;
+    font-size:14px;
+    border-radius:4px;
+}
+
+td{
+    padding:15px 10px;
+    border-bottom:1px solid #ddd;
+    font-size:15px;
+}
+
+tbody tr:hover{
+    background:#fffaf1;
+}
+
+.contact-link{
+    color:#805300;
+    text-decoration:none;
+}
+
+.contact-link:hover{
+    text-decoration:underline;
+}
+
+/* DESCRIPTION */
+.description{
+    font-size:15px;
+    line-height:1.65;
+    text-align:justify;
+    margin:12px 0 30px;
+}
+
+/* OTHER DIRECTORY CARDS */
+.other-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin:25px 0 50px;
+}
+
+.other-card{
+    padding:22px;
+    border:1px solid #e8dfcf;
+    border-radius:5px;
+    background:#fff;
+    box-shadow:0 2px 10px #0000000d;
+}
+
+.other-card h3{
+    color:#795000;
+    margin-bottom:12px;
+}
+
+.other-card p{
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.other-card a{
+    display:inline-block;
+    margin-top:13px;
+    color:#895900;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SEARCH RESULT */
+#searchMessage{
+    margin-bottom:15px;
+    color:#795000;
+    font-size:14px;
+}
+
+/* FOOTER */
+footer{
+    background:#302718;
+    color:white;
+    padding:38px 5% 20px;
+}
+
+.footer-container{
+    max-width:1240px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+footer h3{
+    color:#edbd56;
+    margin-bottom:15px;
+}
+
+footer p,footer a{
+    color:#ddd;
+    font-size:14px;
+    line-height:2;
+}
+
+footer a{
+    display:block;
+    text-decoration:none;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #ffffff30;
+    margin-top:25px;
+    padding-top:18px;
+    font-size:13px;
+}
+
+.top-button{
+    position:fixed;
+    bottom:20px;
+    right:22px;
+    width:42px;
+    height:42px;
+    background:#956300;
+    color:white;
+    border:none;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:1000px){
+
+    .topbar{
+        padding:0 4%;
+    }
+
+    .header{
+        padding:15px 4%;
+    }
+
+    .nav-container{
+        padding:0 4%;
+    }
+
+    .nav-links a{
+        padding:13px 8px;
+        font-size:12px;
+    }
+
+    .other-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:750px){
+
+    .topbar{
+        padding:0 3%;
+        font-size:10px;
+    }
+
+    .header{
+        flex-wrap:wrap;
+        padding:15px 4%;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+        font-size:22px;
+    }
+
+    .logo-text p{
+        font-size:15px;
+    }
+
+    .logo-text h2{
+        font-size:18px;
+    }
+
+    .digital{
+        display:none;
+    }
+
+    .search{
+        width:100%;
+        order:3;
+    }
+
+    .menu-btn{
+        display:block;
+        margin-left:auto;
+    }
+
+    .nav-container{
+        flex-wrap:wrap;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        align-items:stretch;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        font-size:14px;
+        border-bottom:1px solid #eee;
+    }
+
+    .dropdown-menu{
+        position:static;
+        width:100%;
+        padding-left:15px;
+        box-shadow:none;
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display:none;
+    }
+
+    .dropdown.open .dropdown-menu{
+        display:block;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(5,160px);
+        overflow-x:auto;
+        gap:7px;
+    }
+
+    .gallery img{
+        height:90px;
+    }
+
+    .breadcrumb{
+        padding:20px 0;
+        font-size:13px;
+    }
+
+    .page-title{
+        font-size:25px;
+    }
+
+    .section-heading{
+        font-size:21px;
+    }
+
+    .other-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- GOVERNMENT TOP BAR -->
+<div class="topbar">
+
+    <div class="gov">
+        <span class="flag">🇮🇳</span>
+        <span>मध्यप्रदेश शासन</span>
+        <span>Government of Madhya Pradesh</span>
+    </div>
+
+    <div class="top-icons">⇥　अ　♿</div>
+
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo">S</div>
+
+        <div class="logo-text">
+            <p>जिला शहडोल</p>
+            <h2>District Shahdol</h2>
+        </div>
+
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search Directory...">
+        <button onclick="searchDirectory()">⌕</button>
+    </div>
+
+    <div class="digital">Digital India</div>
+
+</header>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="about.html">About District ⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About District</a></li>
+                    <li><a href="about.html#history">History</a></li>
+                    <li><a href="about.html#geography">Geography</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="directory.html" class="active">Directory ⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#education">Education Department</a></li>
+                    <li><a href="#other-directory">DM Profiles</a></li>
+                    <li><a href="#other-directory">Disaster Management</a></li>
+                    <li><a href="#other-directory">Helpline</a></li>
+                    <li><a href="#other-directory">STD & PIN Codes</a></li>
+                    <li><a href="#other-directory">Public Utilities</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact Revenue Officials</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Covid19 Help Numbers</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="education.html">Departments ⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="hospitals.html">Health</a></li>
+                    <li><a href="agriculture.html">Agriculture</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="tourism.html">Tourism ⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tourism.html">Tourist Places</a></li>
+                </ul>
+            </li>
+
+            <li><a href="schemes.html">Forms</a></li>
+            <li><a href="schemes.html">Documents</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<!-- IMAGE GALLERY -->
+<section class="gallery">
+
+    <img src="images/temple.jpg" alt="Shahdol Temple">
+    <img src="images/culture.jpg" alt="Shahdol Culture">
+    <img src="images/tourism.jpg" alt="Shahdol Tourism">
+    <img src="images/fair.jpg" alt="Shahdol Fair">
+    <img src="images/agriculture.jpg" alt="Shahdol Agriculture">
+
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+
+        <div>
+            <a href="index.html">Home</a>
+            &nbsp;›&nbsp;
+            <span>Directory</span>
+            &nbsp;›&nbsp;
+            <span>Education</span>
+        </div>
+
+        <div class="social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+        </div>
+
+    </div>
+
+    <!-- PAGE HEADING -->
+    <h1 class="page-title">Education</h1>
+
+    <div id="searchMessage"></div>
+
+    <!-- DIRECTORY LINKS -->
+    <div class="directory-menu" id="other-directory">
+
+        <a href="#education">Education</a>
+        <a href="#dm">DM Profiles</a>
+        <a href="#disaster">Disaster Management</a>
+        <a href="#helpline">Helpline</a>
+        <a href="#pin-code">STD & PIN Codes</a>
+        <a href="#utilities">Public Utilities</a>
+
+    </div>
+
+    <!-- EDUCATION CONTACT TABLE -->
+    <section id="education">
+
+        <h2 class="section-heading">
+            Key Contact of Education Department, Shahdol District
+        </h2>
+
+        <div class="table-wrap">
+
+            <table id="educationTable">
+
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Officer</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>District Education Officer</td>
+                        <td>
+                            <a class="contact-link"
+                            href="tel:07652245032">07652-245032</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Assistant Commissioner Tribal Work Department</td>
+                        <td>
+                            <a class="contact-link"
+                            href="tel:07652222895">07652-222895</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p class="description">
+            Being a tribal district, a majority of schools are
+            governed by the Tribal Affairs Department. Schools
+            are categorised into primary, middle, high school
+            and higher secondary school. Primary and middle
+            schools are managed by the concerned education
+            authorities, while other schools are managed by
+            their respective departments. Examinations and
+            educational activities are conducted according
+            to government guidelines.
+        </p>
+
+        <p class="description">
+            The Education Department works towards improving
+            educational facilities, student development,
+            school infrastructure and the quality of education
+            throughout Shahdol District.
+        </p>
+
+    </section>
+
+    <!-- OTHER DIRECTORY SECTIONS -->
+    <h2 class="section-heading">Other Important Directories</h2>
+
+    <div class="other-grid">
+
+        <div class="other-card" id="dm">
+            <h3>🏛️ DM Profiles</h3>
+            <p>
+                Information about the District Magistrate
+                and district administration.
+            </p>
+            <a href="contact.html">View Details →</a>
+        </div>
+
+        <div class="other-card" id="disaster">
+            <h3>🚨 Disaster Management</h3>
+            <p>
+                Emergency response, disaster assistance
+                and important safety information.
+            </p>
+            <a href="contact.html">View Details →</a>
+        </div>
+
+        <div class="other-card" id="helpline">
+            <h3>📞 Helpline</h3>
+            <p>
+                Important emergency and public
+                assistance contact information.
+            </p>
+            <a href="contact.html">View Details →</a>
+        </div>
+
+        <div class="other-card" id="pin-code">
+            <h3>📍 STD & PIN Codes</h3>
+            <p>
+                Important postal and telephone
+                code information for the district.
+            </p>
+            <a href="contact.html">View Details →</a>
+        </div>
+
+        <div class="other-card" id="utilities">
+            <h3>🏢 Public Utilities</h3>
+            <p>
+                Useful public services and
+                government office information.
+            </p>
+            <a href="contact.html">View Details →</a>
+        </div>
+
+        <div class="other-card">
+            <h3>🎓 Education Directory</h3>
+            <p>
+                Contact information related to
+                schools and educational departments.
+            </p>
+            <a href="#education">View Details →</a>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+            <h3>District Shahdol</h3>
+            <p>
+                Shahdol District Information Portal.
+                Madhya Pradesh, India.
+            </p>
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About District</a>
+            <a href="directory.html">Directory</a>
+            <a href="tourism.html">Tourism</a>
+        </div>
+
+        <div>
+            <h3>Help & Support</h3>
+            <a href="contact.html">Contact Us</a>
+            <a href="education.html">Education</a>
+            <a href="schemes.html">Government Schemes</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Shahdol District Information Portal.
+        Educational Project.
+    </div>
+
+</footer>
+
+<button class="top-button"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu(){
+
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+
+}
+
+// MOBILE DROPDOWN
+document.querySelectorAll(".dropdown > a")
+.forEach(link => {
+
+    link.addEventListener("click",function(event){
+
+        if(window.innerWidth <= 750){
+
+            event.preventDefault();
+
+            this.parentElement.classList.toggle("open");
+
+        }
+
+    });
+
+});
+
+// DIRECTORY SEARCH
+function searchDirectory(){
+
+    let input = document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
+    let rows = document.querySelectorAll("#educationTable tbody tr");
+    let cards = document.querySelectorAll(".other-card");
+
+    let found = false;
+
+    if(!input){
+        alert("Please enter a search keyword.");
+        return;
+    }
+
+    rows.forEach(row => {
+
+        let match = row.innerText.toLowerCase().includes(input);
+
+        row.style.display = match ? "" : "none";
+
+        if(match) found = true;
+
+    });
+
+    cards.forEach(card => {
+
+        let match = card.innerText.toLowerCase().includes(input);
+
+        card.style.display = match ? "" : "none";
+
+        if(match) found = true;
+
+    });
+
+    document.getElementById("searchMessage").innerText =
+    found ? "Search results for: " + input :
+    "No matching information found.";
+
+    if(found){
+        document.getElementById("searchMessage")
+        .scrollIntoView({behavior:"smooth",block:"center"});
+    }
+
+}
+
+// ENTER KEY SEARCH
+document.getElementById("searchInput")
+.addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+        searchDirectory();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
