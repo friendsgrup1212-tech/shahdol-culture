@@ -1,1 +1,995 @@
-index
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Shahdol | Official Information Portal</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #222;
+}
+
+/* TOP GOVERNMENT BAR */
+.topbar {
+    height: 38px;
+    padding: 0 5%;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    background: #fafafa;
+}
+
+.gov-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flag {
+    font-size: 23px;
+}
+
+/* HEADER */
+.header {
+    min-height: 145px;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e9a900, #087b37);
+    color: white;
+    border: 4px solid #dfaa22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo-text small {
+    font-size: 19px;
+}
+
+.logo-text h2 {
+    font-size: 23px;
+    margin-top: 5px;
+}
+
+.search-box {
+    display: flex;
+    width: 32%;
+    height: 48px;
+    border: 2px solid #bbb;
+    border-bottom: 4px solid #795000;
+    border-radius: 9px 9px 0 0;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.search-box button {
+    border: none;
+    background: white;
+    padding: 0 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #795000;
+}
+
+.digital {
+    color: #167c56;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: white;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.nav-links a {
+    display: block;
+    text-decoration: none;
+    color: #222;
+    padding: 17px 13px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #966500;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: white;
+    box-shadow: 0 5px 15px #0002;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-btn {
+    border: none;
+    background: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* HERO SLIDER */
+.hero {
+    width: 100%;
+    height: 445px;
+    position: relative;
+    overflow: hidden;
+    background: #532078;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 40px 7%;
+    background: linear-gradient(90deg, #0001, #0008);
+    color: white;
+    text-align: right;
+}
+
+.slide-content div {
+    max-width: 550px;
+}
+
+.slide-content h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.slide-content p {
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+.slide-content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    background: #e5a900;
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.slide1 {
+    background-image: url('images/shahdol-banner.jpg');
+    background-color: #603080;
+}
+
+.slide2 {
+    background-image: url('images/tourism.jpg');
+    background-color: #216b4a;
+}
+
+.slide3 {
+    background-image: url('images/district.jpg');
+    background-color: #285b85;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-controls button {
+    border: none;
+    padding: 9px 14px;
+    background: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+/* LATEST NEWS */
+.container {
+    max-width: 1150px;
+    width: 90%;
+    margin: auto;
+}
+
+.news {
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+    background: #fff0d1;
+    border-radius: 5px;
+    overflow: hidden;
+    min-height: 55px;
+}
+
+.news-title {
+    background: #704800;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 17px 28px;
+    white-space: nowrap;
+}
+
+.news-text {
+    padding: 12px 15px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.news-text a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* QUICK LINKS */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: 45px auto;
+}
+
+.quick-card {
+    text-align: center;
+    padding: 25px 12px;
+    background: white;
+    box-shadow: 0 2px 15px #0002;
+    border-radius: 5px;
+    border-bottom: 4px solid #d9a326;
+    text-decoration: none;
+    color: #222;
+    transition: .3s;
+}
+
+.quick-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 7px 20px #0003;
+}
+
+.quick-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.quick-card h3 {
+    font-size: 16px;
+}
+
+/* INFORMATION SECTION */
+.section-title {
+    text-align: center;
+    margin: 55px 0 30px;
+}
+
+.section-title h2 {
+    font-size: 29px;
+    color: #704800;
+}
+
+.section-title p {
+    color: #777;
+    margin-top: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 7px;
+    box-shadow: 0 3px 12px #0001;
+    transition: .3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #d3a02e;
+}
+
+.info-card .icon {
+    font-size: 35px;
+}
+
+.info-card h3 {
+    margin: 15px 0 10px;
+    color: #704800;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.info-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #966500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ABOUT */
+.about {
+    background: #fff7e9;
+    padding: 45px 0;
+    margin-top: 30px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-content h2 {
+    color: #704800;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #555;
+    line-height: 1.9;
+}
+
+.about-image {
+    height: 260px;
+    background: linear-gradient(135deg, #9d7125, #315e42);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #302716;
+    color: white;
+    padding: 40px 5% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+footer h3 {
+    margin-bottom: 17px;
+    color: #f2bd48;
+}
+
+footer p, footer a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff30;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+/* BACK TO TOP */
+.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    background: #966500;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        width: 100%;
+        order: 3;
+    }
+
+    .quick-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    .topbar {
+        font-size: 11px;
+        padding: 0 3%;
+    }
+
+    .header {
+        padding: 18px 4%;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+        font-size: 20px;
+    }
+
+    .logo-text small {
+        font-size: 15px;
+    }
+
+    .logo-text h2 {
+        font-size: 18px;
+    }
+
+    .digital {
+        display: none;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .slide-content {
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .slide-content h1 {
+        font-size: 29px;
+    }
+
+    .slide-content p {
+        font-size: 16px;
+    }
+
+    .news {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .news-title {
+        font-size: 17px;
+    }
+
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="gov-left">
+        <span class="flag">🇮🇳</span>
+        <span>मध्यप्रदेश शासन</span>
+        <span>Government of Madhya Pradesh</span>
+    </div>
+    <div>भारत सरकार | Government Portal</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo-area">
+        <div class="logo">S</div>
+        <div class="logo-text">
+            <small>जिला शहडोल</small>
+            <h2>District Shahdol</h2>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search District Information...">
+        <button onclick="searchSite()">⌕</button>
+    </div>
+
+    <div class="digital">Digital Shahdol</div>
+
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="index.html" class="active">Home</a></li>
+
+            <li class="dropdown">
+                <a href="about.html">About District ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">District Profile</a></li>
+                    <li><a href="about.html#history">History</a></li>
+                    <li><a href="about.html#geography">Geography</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="education.html">Education ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education.html">Colleges</a></li>
+                    <li><a href="education.html#schools">Schools</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">Directory</a></li>
+            <li><a href="contact.html">Contact Officials</a></li>
+
+            <li class="dropdown">
+                <a href="tourism.html">Tourism ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tourism.html">Tourist Places</a></li>
+                    <li><a href="tourism.html#temples">Temples</a></li>
+                </ul>
+            </li>
+
+            <li><a href="agriculture.html">Agriculture</a></li>
+            <li><a href="schemes.html">Schemes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+
+    <div class="slide slide1 active">
+        <div class="slide-content">
+            <div>
+                <h1>Welcome to District Shahdol</h1>
+                <p>मध्यप्रदेश के शहडोल जिले की आधिकारिक जानकारी, पर्यटन, शिक्षा और सरकारी सेवाएँ।</p>
+                <a href="about.html">Explore Shahdol</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide slide2">
+        <div class="slide-content">
+            <div>
+                <h1>Explore Shahdol Tourism</h1>
+                <p>शहडोल के ऐतिहासिक और प्राकृतिक पर्यटन स्थलों को जानें।</p>
+                <a href="tourism.html">Explore Places</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide slide3">
+        <div class="slide-content">
+            <div>
+                <h1>Education & Development</h1>
+                <p>शिक्षा, रोजगार और जिले के विकास से जुड़ी जानकारी।</p>
+                <a href="education.html">Know More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <button onclick="changeSlide(-1)">❮</button>
+        <button onclick="toggleSlider()" id="pauseBtn">Ⅱ</button>
+        <button onclick="changeSlide(1)">❯</button>
+    </div>
+
+</section>
+
+<!-- LATEST NEWS -->
+<div class="container">
+    <div class="news">
+        <div class="news-title">Latest News</div>
+        <div class="news-text">
+            <a href="schemes.html">
+                शहडोल जिले की नवीनतम सूचनाएँ और महत्वपूर्ण घोषणाएँ यहाँ देखें।
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="container">
+    <div class="quick-links">
+
+        <a href="contact.html" class="quick-card">
+            <div class="quick-icon">🏢</div>
+            <h3>E-Office</h3>
+        </a>
+
+        <a href="contact.html" class="quick-card">
+            <div class="quick-icon">📞</div>
+            <h3>Telephone Directory</h3>
+        </a>
+
+        <a href="tourism.html" class="quick-card">
+            <div class="quick-icon">🏞️</div>
+            <h3>Tourist Places</h3>
+        </a>
+
+        <a href="education.html" class="quick-card">
+            <div class="quick-icon">🎓</div>
+            <h3>Education</h3>
+        </a>
+
+        <a href="schemes.html" class="quick-card">
+            <div class="quick-icon">📋</div>
+            <h3>Government Schemes</h3>
+        </a>
+
+    </div>
+</div>
+
+<!-- DISTRICT INFORMATION -->
+<div class="container">
+
+    <div class="section-title">
+        <h2>District Information</h2>
+        <p>शहडोल जिले से जुड़ी महत्वपूर्ण जानकारी</p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="icon">🏛️</div>
+            <h3>About Shahdol</h3>
+            <p>शहडोल जिले का इतिहास, भौगोलिक स्थिति और सामान्य परिचय जानें।</p>
+            <a href="about.html">Read More →</a>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🎓</div>
+            <h3>Education</h3>
+            <p>जिले के स्कूल, कॉलेज और शैक्षणिक संस्थानों की जानकारी।</p>
+            <a href="education.html">Read More →</a>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🏥</div>
+            <h3>Health Services</h3>
+            <p>अस्पतालों, स्वास्थ्य केंद्रों और चिकित्सा सेवाओं की जानकारी।</p>
+            <a href="hospitals.html">Read More →</a>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🌾</div>
+            <h3>Agriculture</h3>
+            <p>कृषि, किसानों, फसलों और कृषि विभाग की जानकारी।</p>
+            <a href="agriculture.html">Read More →</a>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🛕</div>
+            <h3>Tourism</h3>
+            <p>शहडोल के प्रसिद्ध मंदिरों और पर्यटन स्थलों की जानकारी।</p>
+            <a href="tourism.html">Read More →</a>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">📜</div>
+            <h3>Government Schemes</h3>
+            <p>केंद्र और मध्यप्रदेश सरकार की योजनाओं की जानकारी।</p>
+            <a href="schemes.html">Read More →</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- ABOUT SHAH DOL -->
+<section class="about">
+    <div class="container about-content">
+
+        <div>
+            <h2>About District Shahdol</h2>
+            <p>
+                शहडोल मध्यप्रदेश का एक महत्वपूर्ण जिला है।
+                इस वेबसाइट का उद्देश्य जिले के नागरिकों,
+                विद्यार्थियों, किसानों और पर्यटकों को
+                जिले से संबंधित महत्वपूर्ण जानकारी एक ही
+                स्थान पर उपलब्ध कराना है।
+            </p>
+            <br>
+            <a href="about.html" style="color:#966500;font-weight:bold;">
+                Know More About Shahdol →
+            </a>
+        </div>
+
+        <div class="about-image">
+            SHAHDOL MADHYA PRADESH
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>District Shahdol</h3>
+            <p>शहडोल जिला सूचना पोर्टल</p>
+            <p>मध्यप्रदेश, भारत</p>
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+            <a href="about.html">About District</a>
+            <a href="education.html">Education</a>
+            <a href="tourism.html">Tourism</a>
+            <a href="schemes.html">Government Schemes</a>
+        </div>
+
+        <div>
+            <h3>Contact & Help</h3>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Directory</a>
+            <a href="contact.html">Help & Support</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Shahdol District Information Portal |
+        Designed for Educational Project
+    </div>
+
+</footer>
+
+<button class="top-button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+// SLIDER
+let currentSlide = 0;
+let slides = document.querySelectorAll(".slide");
+let sliderTimer;
+let paused = false;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+function startSlider() {
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(() => {
+        if (!paused) changeSlide(1);
+    }, 4000);
+}
+
+function toggleSlider() {
+    paused = !paused;
+    document.getElementById("pauseBtn").textContent =
+        paused ? "▶" : "Ⅱ";
+}
+
+startSlider();
+
+// SEARCH
+function searchSite() {
+    let value = document.getElementById("searchInput")
+        .value.trim().toLowerCase();
+
+    if (!value) {
+        alert("कृपया Search में कुछ लिखें।");
+        return;
+    }
+
+    let pages = {
+        "about": "about.html",
+        "history": "about.html",
+        "education": "education.html",
+        "college": "education.html",
+        "school": "education.html",
+        "tourism": "tourism.html",
+        "temple": "tourism.html",
+        "hospital": "hospitals.html",
+        "health": "hospitals.html",
+        "agriculture": "agriculture.html",
+        "farm": "agriculture.html",
+        "scheme": "schemes.html",
+        "yojana": "schemes.html",
+        "contact": "contact.html"
+    };
+
+    for (let key in pages) {
+        if (value.includes(key)) {
+            window.location.href = pages[key];
+            return;
+        }
+    }
+
+    alert("इस जानकारी का पेज अभी उपलब्ध नहीं है।");
+}
+
+// ENTER KEY SEARCH
+document.getElementById("searchInput")
+.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") searchSite();
+});
+
+</script>
+
+</body>
+</html>
+
