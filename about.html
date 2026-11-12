@@ -1,1 +1,914 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About District | District Shahdol</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #171717;
+}
+
+/* GOVERNMENT TOP BAR */
+.topbar {
+    height: 35px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17%;
+    font-size: 12px;
+}
+
+.gov {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flag {
+    font-size: 23px;
+}
+
+.top-icons {
+    color: #795000;
+    font-size: 19px;
+}
+
+/* MAIN HEADER */
+.header {
+    min-height: 115px;
+    padding: 15px 17%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 4px solid #d9a900;
+    background: linear-gradient(135deg, #087a32, #dca800);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo-text p {
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+.logo-text h2 {
+    font-size: 22px;
+}
+
+.search {
+    display: flex;
+    width: 36%;
+    height: 48px;
+    border: 2px solid #aaa;
+    border-bottom: 4px solid #795000;
+    border-radius: 8px 8px 0 0;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.search button {
+    border: none;
+    background: white;
+    padding: 0 15px;
+    font-size: 21px;
+    color: #795000;
+    cursor: pointer;
+}
+
+.digital {
+    font-size: 21px;
+    font-weight: bold;
+    color: #26835b;
+}
+
+/* NAVIGATION */
+.navbar {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #171717;
+    display: block;
+    padding: 15px 13px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #956300;
+    color: white;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 210px;
+    list-style: none;
+    box-shadow: 0 5px 15px #0002;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 27px;
+    border: none;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* IMAGE GALLERY */
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+    height: 108px;
+    object-fit: cover;
+    display: block;
+}
+
+/* PAGE CONTAINER */
+.container {
+    max-width: 1090px;
+    width: 90%;
+    margin: auto;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #795000;
+}
+
+.social {
+    display: flex;
+    gap: 18px;
+}
+
+.social a {
+    font-size: 20px;
+    color: #795000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.content {
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+
+.content h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.content p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 13px;
+    text-align: justify;
+}
+
+/* CONTENT HEADINGS */
+.content h2 {
+    font-size: 23px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+    color: #704800;
+    border-left: 4px solid #c18b24;
+    padding-left: 12px;
+}
+
+.content h3 {
+    font-size: 18px;
+    margin: 18px 0 10px;
+}
+
+.content ul,
+.content ol {
+    padding-left: 28px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+/* INFORMATION BOXES */
+.info-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.info-box {
+    padding: 20px;
+    background: #fff8eb;
+    border: 1px solid #e8d8b9;
+    border-radius: 5px;
+}
+
+.info-box h3 {
+    color: #795000;
+    margin: 0 0 10px;
+}
+
+.info-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* DISTRICT IMAGE */
+.district-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #302718;
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-container {
+    max-width: 1090px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+footer h3 {
+    color: #edbd56;
+    margin-bottom: 15px;
+}
+
+footer a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 2;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff30;
+    margin-top: 25px;
+    padding-top: 18px;
+    font-size: 13px;
+}
+
+/* BACK TO TOP */
+.top-button {
+    position: fixed;
+    right: 22px;
+    bottom: 20px;
+    border: none;
+    background: #956300;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1100px) {
+    .topbar {
+        padding: 0 5%;
+    }
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    .nav-container {
+        padding: 0 4%;
+    }
+
+    .nav-links a {
+        padding: 13px 8px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 750px) {
+    .topbar {
+        padding: 0 3%;
+        font-size: 10px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text p {
+        font-size: 15px;
+    }
+
+    .logo-text h2 {
+        font-size: 18px;
+    }
+
+    .search {
+        width: 100%;
+        order: 3;
+    }
+
+    .digital {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 15px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(5, 160px);
+        overflow-x: auto;
+        gap: 7px;
+    }
+
+    .gallery img {
+        height: 90px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .content h1 {
+        font-size: 25px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .info-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .district-image {
+        height: 210px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- GOVERNMENT BAR -->
+<div class="topbar">
+    <div class="gov">
+        <span class="flag">🇮🇳</span>
+        <span>मध्यप्रदेश शासन</span>
+        <span>Government of Madhya Pradesh</span>
+    </div>
+    <div class="top-icons">⇥　अ　♿</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo-area">
+        <div class="logo">S</div>
+
+        <div class="logo-text">
+            <p>जिला शहडोल</p>
+            <h2>District Shahdol</h2>
+        </div>
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search">
+        <button onclick="searchPage()">⌕</button>
+    </div>
+
+    <div class="digital">Digital India</div>
+
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="about.html" class="active">About District⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About District</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#geography">Geography</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="contact.html">Directory⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html">Officers Directory</a></li>
+                    <li><a href="contact.html">Telephone Directory</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">Contact Officials</a></li>
+
+            <li><a href="contact.html">Help Numbers</a></li>
+
+            <li class="dropdown">
+                <a href="education.html">Departments⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="hospitals.html">Health</a></li>
+                    <li><a href="agriculture.html">Agriculture</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="tourism.html">Tourism⌄</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tourism.html">Tourist Places</a></li>
+                    <li><a href="tourism.html">Temples</a></li>
+                </ul>
+            </li>
+
+            <li><a href="schemes.html">Forms</a></li>
+            <li><a href="schemes.html">Documents</a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery">
+
+    <img src="images/temple.jpg" alt="Shahdol Temple">
+
+    <img src="images/culture.jpg" alt="Shahdol Culture">
+
+    <img src="images/tourism.jpg" alt="Shahdol Tourism">
+
+    <img src="images/fair.jpg" alt="Shahdol Fair">
+
+    <img src="images/agriculture.jpg" alt="Shahdol Agriculture">
+
+</section>
+
+<!-- BREADCRUMB -->
+<div class="container">
+
+    <div class="breadcrumb">
+
+        <div>
+            <a href="index.html">Home</a>
+            &nbsp;›&nbsp;
+            <span>About District</span>
+        </div>
+
+        <div class="social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+        </div>
+
+    </div>
+
+    <!-- ABOUT CONTENT -->
+    <main class="content">
+
+        <h1>About District</h1>
+
+        <p>
+            Shahdol District is situated in the north-eastern
+            part of Madhya Pradesh, India. It is an important
+            district of the state and is known for its natural
+            beauty, forests, historical places and cultural
+            heritage.
+        </p>
+
+        <p>
+            The district headquarters is located at Shahdol.
+            The region has a rich natural environment with
+            hills, valleys, rivers and forests. The district
+            is surrounded by neighbouring districts including
+            Anuppur, Umaria, Sidhi and other adjoining areas.
+        </p>
+
+        <p>
+            Shahdol is predominantly a hilly and forested
+            region. The district has beautiful landscapes,
+            agricultural areas and a significant natural
+            resource base. Sal and mixed forests are important
+            features of its geographical environment.
+        </p>
+
+        <p>
+            The district is also known for its cultural
+            traditions, local festivals, religious places
+            and historical heritage. People from different
+            communities live here and contribute to the
+            cultural diversity of the region.
+        </p>
+
+        <!-- BASIC INFORMATION -->
+        <h2>District at a Glance</h2>
+
+        <div class="info-boxes">
+
+            <div class="info-box">
+                <h3>📍 Location</h3>
+                <p>North-Eastern Madhya Pradesh, India.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🏛️ Headquarters</h3>
+                <p>Shahdol City</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🌳 Geography</h3>
+                <p>Hills, forests, valleys and plains.</p>
+            </div>
+
+        </div>
+
+        <!-- HISTORY -->
+        <h2 id="history">History of Shahdol</h2>
+
+        <p>
+            Shahdol has a rich historical and cultural
+            background. The region has been associated
+            with different historical periods and local
+            traditions of Madhya Pradesh.
+        </p>
+
+        <p>
+            The district is known for its historical
+            monuments, ancient temples and cultural
+            heritage. The history of Shahdol reflects
+            the traditions and development of the
+            north-eastern region of Madhya Pradesh.
+        </p>
+
+        <!-- GEOGRAPHY -->
+        <h2 id="geography">Geographical Location</h2>
+
+        <p>
+            Geographically, Shahdol is located in the
+            north-eastern part of the Deccan Plateau.
+            Its landscape includes parts of the Maikal
+            ranges, plateaus, hills and low-lying plains.
+        </p>
+
+        <p>
+            The region has a varied topography, with
+            forests, agricultural land and river valleys.
+            These natural features play an important
+            role in the environment and livelihood
+            of the local population.
+        </p>
+
+        <h3>Major Geographical Features</h3>
+
+        <ol>
+            <li>The Maikal Range</li>
+            <li>Hills of the Eastern Plateau</li>
+            <li>Forested and low-lying plains</li>
+            <li>River valleys and agricultural areas</li>
+        </ol>
+
+        <!-- FOREST -->
+        <h2>Natural Resources and Forests</h2>
+
+        <p>
+            Shahdol is known for its green landscapes
+            and forest resources. Sal and mixed forests
+            are found in several parts of the district.
+            Forests are important for biodiversity,
+            environmental balance and the livelihoods
+            of local communities.
+        </p>
+
+        <!-- CULTURE -->
+        <h2>Culture and Tradition</h2>
+
+        <p>
+            The culture of Shahdol represents the
+            traditional lifestyle of eastern Madhya
+            Pradesh. Local festivals, folk traditions,
+            traditional food, music and community
+            celebrations are important parts of life
+            in the district.
+        </p>
+
+        <!-- ECONOMY -->
+        <h2>Economy and Agriculture</h2>
+
+        <p>
+            Agriculture, forest-based activities,
+            local businesses and other economic
+            activities contribute to the district's
+            economy. Farmers cultivate different
+            crops according to the local climate
+            and soil conditions.
+        </p>
+
+        <!-- TOURISM -->
+        <h2>Tourism in Shahdol</h2>
+
+        <p>
+            Shahdol offers several places of historical,
+            religious and natural importance. Visitors
+            can explore local temples, cultural places
+            and scenic surroundings.
+        </p>
+
+        <img src="images/shahdol-tourism.jpg"
+             class="district-image"
+             alt="Tourism in Shahdol">
+
+        <p>
+            Tourism information, visiting places,
+            directions and other useful details can
+            help visitors explore the district.
+        </p>
+
+        <!-- CONCLUSION -->
+        <h2>Conclusion</h2>
+
+        <p>
+            Shahdol is an important district of Madhya
+            Pradesh with a rich cultural heritage,
+            natural beauty and historical significance.
+            This portal aims to provide useful
+            information about the district to students,
+            citizens, farmers and tourists.
+        </p>
+
+    </main>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+            <h3>District Shahdol</h3>
+            <p>
+                Shahdol District Information Portal.
+                Explore the history, culture, education
+                and tourism of Shahdol.
+            </p>
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About District</a>
+            <a href="education.html">Education</a>
+            <a href="tourism.html">Tourism</a>
+        </div>
+
+        <div>
+            <h3>Help & Support</h3>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Directory</a>
+            <a href="schemes.html">Government Schemes</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Shahdol District Information Portal.
+        Educational Project.
+    </div>
+
+</footer>
+
+<button class="top-button"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu() {
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+}
+
+// MOBILE DROPDOWN
+document.querySelectorAll(".dropdown > a")
+.forEach(link => {
+    link.addEventListener("click", function(event) {
+
+        if (window.innerWidth <= 750) {
+            event.preventDefault();
+
+            this.parentElement.classList.toggle("open");
+        }
+
+    });
+});
+
+// SEARCH
+function searchPage() {
+
+    let value = document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
+    let pages = {
+        "home": "index.html",
+        "about": "about.html",
+        "history": "about.html#history",
+        "geography": "about.html#geography",
+        "education": "education.html",
+        "college": "education.html",
+        "tourism": "tourism.html",
+        "hospital": "hospitals.html",
+        "agriculture": "agriculture.html",
+        "scheme": "schemes.html",
+        "contact": "contact.html"
+    };
+
+    if (!value) {
+        alert("Please enter something to search.");
+        return;
+    }
+
+    for (let key in pages) {
+        if (value.includes(key)) {
+            window.location.href = pages[key];
+            return;
+        }
+    }
+
+    alert("Page not found. Please try another keyword.");
+}
+
+// ENTER KEY
+document.getElementById("searchInput")
+.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchPage();
+    }
+});
+
+</script>
+
+</body>
+</html>
+
