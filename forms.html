@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Portal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #ffffff;
+            color: #333;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .breadcrumb a {
+            color: #8c6200;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Page Heading */
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 25px;
+        }
+
+        /* Filter Card Box */
+        .filter-card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 22px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .filter-label {
+            color: #7a5200;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .filter-select {
+            width: 450px;
+            max-width: 100%;
+            padding: 11px 18px;
+            border: 1px solid #dcdcdc;
+            border-radius: 25px;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            border-color: #8c6200;
+        }
+
+        .filter-btn {
+            background-color: #8c6200;
+            color: #fff;
+            border: none;
+            padding: 11px 26px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #6e4d00;
+        }
+
+        /* Table Section */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .table-banner {
+            background-color: #6b4b00;
+            color: #fff;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px 4px 0 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        thead th {
+            background-color: #faeed9;
+            color: #5c3f00;
+            text-align: left;
+            padding: 13px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 1px solid #e6d5b8;
+        }
+
+        tbody td {
+            padding: 18px;
+            font-size: 14px;
+            color: #222;
+            border-bottom: 1px solid #eeeeee;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        tbody tr:hover {
+            background-color: #fcfaf5;
+        }
+
+        .download-link {
+            color: #8c6200;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .filter-card {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px;
+            }
+            .filter-select {
+                width: 100%;
+            }
+            .filter-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="#">Home</a> &rsaquo; Forms
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="page-title">Forms</h1>
+
+    <!-- Filter Box -->
+    <div class="filter-card">
+        <label for="category" class="filter-label">Filter Form category wise</label>
+        <select id="category" class="filter-select" onchange="filterForms()">
+            <option value="all">All</option>
+            <option value="nic">NIC Services</option>
+            <option value="revenue">Revenue Department</option>
+            <option value="certificate">Certificates</option>
+        </select>
+        <button class="filter-btn" onclick="filterForms()">
+            &#128269; Filter
+        </button>
+    </div>
+
+    <!-- Forms Table -->
+    <div class="table-wrapper">
+        <div class="table-banner">Forms</div>
+        <table id="formsTable">
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Title</th>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 35%;">Description</th>
+                    <th style="width: 14%;">Address</th>
+                    <th style="width: 18%;">View / Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-category="nic">
+                    <td>NIC e-Forms</td>
+                    <td>13-11-2026</td>
+                    <td>Form for availing NIC services such as email, Cloud, Wifi, Mobile Number Update, VPN services etc.</td>
+                    <td>NIC District Centre</td>
+                    <td>
+                        <a href="#" class="download-link" target="_blank">
+                            e - Forms NIC &#8599;
+                        </a>
+                    </td>
+                </tr>
+                <tr data-category="revenue">
+                    <td>Income Certificate Form</td>
+                    <td>10-11-2026</td>
+                    <td>Application form for issuing new Income Certificate for residents.</td>
+                    <td>Tehsil Office</td>
+                    <td>
+                        <a href="#" class="download-link" target="_blank">
+                            Download PDF &#8599;
+                        </a>
+                    </td>
+                </tr>
+                <tr data-category="certificate">
+                    <td>Domicile Certificate</td>
+                    <td>05-11-2026</td>
+                    <td>Form required for local residence proof and state domicile registration.</td>
+                    <td>Lok Seva Kendra</td>
+                    <td>
+                        <a href="#" class="download-link" target="_blank">
+                            Download PDF &#8599;
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Simple JavaScript for Working Category Filter -->
+<script>
+    function filterForms() {
+        const selectedCategory = document.getElementById('category').value;
+        const rows = document.querySelectorAll('#formsTable tbody tr');
+
+        rows.forEach(row => {
+            const rowCategory = row.getAttribute('data-category');
+            if (selectedCategory === 'all' || rowCategory === selectedCategory) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
