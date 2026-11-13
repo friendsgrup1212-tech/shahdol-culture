@@ -1,1 +1,452 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covid19 Help Numbers | District Shahdol</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.logo h2 {
+    color: #153b20;
+    font-size: 25px;
+}
+
+.logo p {
+    color: #555;
+}
+
+/* Navigation */
+nav {
+    background: #075c35;
+    padding: 15px 7%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #ffdf80;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(120deg, #075c35, #159653);
+    color: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Main */
+.container {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #08713e;
+    text-decoration: none;
+}
+
+/* Emergency box */
+.emergency {
+    background: #fff2f0;
+    border-left: 5px solid #dc3545;
+    padding: 22px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.emergency h2 {
+    color: #c62828;
+    margin-bottom: 10px;
+}
+
+.emergency p {
+    line-height: 1.8;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #08713e;
+    box-shadow: 0 0 5px #b5dfc5;
+}
+
+/* Cards */
+.section-title {
+    margin-bottom: 20px;
+    color: #075c35;
+    font-size: 26px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    border-top: 4px solid #159653;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.14);
+}
+
+.card .icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #17452b;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.phone {
+    font-size: 20px;
+    font-weight: bold;
+    color: #075c35;
+    margin-bottom: 18px;
+}
+
+.call-btn {
+    display: inline-block;
+    background: #128347;
+    color: white;
+    padding: 11px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.call-btn:hover {
+    background: #075c35;
+}
+
+.no-result {
+    display: none;
+    padding: 25px;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    color: #c62828;
+}
+
+/* Footer */
+footer {
+    background: #123d27;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 60px;
+    line-height: 1.8;
+}
+
+footer a {
+    color: #ffdf80;
+    text-decoration: none;
+}
+
+@media(max-width:600px) {
+    .header {
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        margin: 7px;
+        font-size: 14px;
+    }
+
+    .banner h1 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg"
+        alt="Government Emblem">
+        <div>
+            <p>जिला शहडोल</p>
+            <h2>District Shahdol</h2>
+        </div>
+    </div>
+    <h3>Digital India 🇮🇳</h3>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About District</a>
+    <a href="directory.html">Directory</a>
+    <a href="contact revenue officials.html">Contact Revenue Officials</a>
+    <a href="covid19 help number.html">Covid19 Help Numbers</a>
+    <a href="tourism.html">Tourism</a>
+    <a href="Documents.html">Documents</a>
+</nav>
+
+<!-- BANNER -->
+<section class="banner">
+    <h1>Covid19 Help Numbers</h1>
+    <p>
+        जिला शहडोल के नागरिकों के लिए महत्वपूर्ण सहायता नंबर।<br>
+        आवश्यकता पड़ने पर संबंधित अधिकारी से संपर्क करें।
+    </p>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> › Covid19 Help Numbers
+    </div>
+
+    <!-- EMERGENCY -->
+    <div class="emergency">
+        <h2>🚨 आपातकालीन सहायता</h2>
+        <p>
+            आपातकालीन स्थिति में भारत की राष्ट्रीय आपातकालीन सेवा
+            <b>112</b> पर संपर्क करें।
+        </p>
+        <br>
+        <a href="tel:112" class="call-btn">📞 Call 112</a>
+    </div>
+
+    <!-- SEARCH -->
+    <h2 class="section-title">अधिकारी संपर्क सूची</h2>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 अधिकारी का नाम या मोबाइल नंबर खोजें..."
+            onkeyup="searchContacts()">
+    </div>
+
+    <!-- CONTACT CARDS -->
+    <div class="cards" id="contactList">
+
+        <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Additional Collector</h3>
+            <p>अपर कलेक्टर, शहडोल</p>
+            <div class="phone">07587966301</div>
+            <a href="tel:07587966301" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>SDO Revenue Sohagpur</h3>
+            <p>अनुविभागीय अधिकारी राजस्व, सोहागपुर</p>
+            <div class="phone">07587966306</div>
+            <a href="tel:07587966306" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>SDO Revenue Details</h3>
+            <p>अनुविभागीय अधिकारी राजस्व</p>
+            <div class="phone">07587966307</div>
+            <a href="tel:07587966307" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>SDO Revenue Jaitpur</h3>
+            <p>अनुविभागीय अधिकारी राजस्व, जैतपुर</p>
+            <div class="phone">07587966307</div>
+            <a href="tel:07587966307" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>SDO Jaisinghnagar</h3>
+            <p>अनुविभागीय अधिकारी, जयसिंहनगर</p>
+            <div class="phone">07587966309</div>
+            <a href="tel:07587966309" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍💼</div>
+            <h3>Tehsildar Sohagpur</h3>
+            <p>तहसीलदार, सोहागपुर</p>
+            <div class="phone">07587966310</div>
+            <a href="tel:07587966310" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍💼</div>
+            <h3>Tehsildar Beohari</h3>
+            <p>तहसीलदार, ब्यौहारी</p>
+            <div class="phone">07587966311</div>
+            <a href="tel:07587966311" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍💼</div>
+            <h3>Tehsildar Jaisinghnagar</h3>
+            <p>तहसीलदार, जयसिंहनगर</p>
+            <div class="phone">07587966313</div>
+            <a href="tel:07587966313" class="call-btn">📞 Call Now</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍💼</div>
+            <h3>Tehsildar Gohparu</h3>
+            <p>तहसीलदार, गोहपारू</p>
+            <div class="phone">07587966313</div>
+            <a href="tel:07587966313" class="call-btn">📞 Call Now</a>
+        </div>
+
+    </div>
+
+    <div class="no-result" id="noResult">
+        कोई अधिकारी या मोबाइल नंबर नहीं मिला।
+    </div>
+
+    <p style="margin-top:25px;color:#666;line-height:1.7;">
+        नोट: यह संपर्क सूची आपके दिए गए स्क्रीनशॉट से तैयार की गई है।
+        वेबसाइट पर प्रकाशित करने से पहले सभी मोबाइल नंबर संबंधित
+        सरकारी विभाग से सत्यापित कर लें।
+    </p>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>District Shahdol | Government Information Portal</h3>
+    <p>जिला शहडोल, मध्य प्रदेश</p>
+    <p>© 2026 District Shahdol. All Rights Reserved.</p>
+    <p><a href="index.html">Back to Home</a></p>
+</footer>
+
+<!-- JAVASCRIPT SEARCH -->
+<script>
+function searchContacts() {
+
+    let input = document.getElementById("search")
+        .value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+    let count = 0;
+
+    cards.forEach(function(card) {
+
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(input)) {
+            card.style.display = "block";
+            count++;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResult").style.display =
+        count === 0 ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
+
