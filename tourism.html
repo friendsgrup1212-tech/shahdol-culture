@@ -1,1 +1,515 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Shahdol - Government of Madhya Pradesh</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #111;
+}
+
+/* HEADER */
+
+.header {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 4%;
+    border-bottom: 1px solid #aaa;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 85px;
+    height: 75px;
+    border-radius: 50%;
+    background: #138b35;
+    border: 5px solid #d8b500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+}
+
+.logo-text {
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.logo-text strong {
+    font-size: 23px;
+}
+
+.search-box {
+    width: 470px;
+    height: 53px;
+    border: 2px solid #bbb;
+    border-bottom: 4px solid #795000;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    border: none;
+    background: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.digital {
+    color: #555;
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 14%;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 14px 15px;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.navbar ul li a:hover {
+    color: #986300;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #956000;
+    min-width: 250px;
+    z-index: 100;
+}
+
+.dropdown-menu a {
+    color: white !important;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.dropdown-menu a:hover {
+    background: #704700;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-icon {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+/* IMAGE GALLERY */
+
+.gallery {
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+    height: 115px;
+    padding: 5px 0;
+}
+
+.gallery img {
+    min-width: 23%;
+    height: 115px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* MAIN CONTENT */
+
+.container {
+    padding: 25px 3.7%;
+}
+
+.breadcrumb {
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+
+.breadcrumb a {
+    color: #926000;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    padding: 0 8px;
+}
+
+.content h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 17px;
+    font-size: 17px;
+}
+
+.content ul li a {
+    text-decoration: none;
+    color: #001b50;
+}
+
+.content ul li a:hover {
+    color: #a16b00;
+    text-decoration: underline;
+}
+
+/* SOCIAL ICONS */
+
+.social {
+    position: absolute;
+    right: 17%;
+    top: 285px;
+    font-size: 22px;
+    color: #795000;
+    display: flex;
+    gap: 15px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+        order: 3;
+    }
+
+    .digital {
+        margin-right: 0;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        overflow: visible;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+
+    .navbar ul li a {
+        padding: 12px 9px;
+        font-size: 13px;
+    }
+
+    .gallery img {
+        min-width: 45%;
+    }
+
+    .social {
+        display: none;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .digital {
+        display: none;
+    }
+
+    .content h1 {
+        font-size: 27px;
+    }
+
+    .gallery {
+        height: 90px;
+    }
+
+    .gallery img {
+        height: 85px;
+        min-width: 75%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo-area">
+        <div class="logo">🏛</div>
+
+        <div class="logo-text">
+            जिला शहडोल<br>
+            <strong>District Shahdol</strong>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search">
+        <button onclick="searchPage()">⌕</button>
+    </div>
+
+    <div class="digital">
+        <span style="color:#ed7025;">●</span>
+        Digital India
+        <small style="display:block;font-size:9px;">
+            Power To Empower
+        </small>
+    </div>
+
+</header>
+
+<!-- NAVIGATION BAR -->
+
+<nav class="navbar">
+
+<ul>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+        <a href="#">About District ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">History</a>
+            <a href="#">Geography</a>
+            <a href="#">Administration</a>
+            <a href="#">Demography</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Directory ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Who's Who</a>
+            <a href="#">District Officers</a>
+            <a href="#">Important Contacts</a>
+        </div>
+    </li>
+
+    <li><a href="#">Contact revenue officials</a></li>
+
+    <li><a href="#">Covid19 Help Numbers</a></li>
+
+    <li class="dropdown">
+        <a href="#">Departments ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Education Department</a>
+            <a href="#">Health Department</a>
+            <a href="#">Police Department</a>
+            <a href="#">Agriculture Department</a>
+        </div>
+    </li>
+
+    <!-- TOURISM DROPDOWN -->
+
+    <li class="dropdown">
+        <a href="#" style="background:#956000;color:white;">
+            Tourism ⌄
+        </a>
+
+        <div class="dropdown-menu">
+
+            <a href="#">How to Reach</a>
+
+            <a href="#">
+                Accommodation<br>
+                (Hotel/Resort/Dharamsala)
+            </a>
+
+            <a href="#">Places of Interest</a>
+
+            <a href="#">Tourist Places</a>
+
+            <a href="#">Festivals</a>
+
+            <a href="#">Produce</a>
+
+            <a href="#">Culinary Delights</a>
+
+        </div>
+    </li>
+
+    <li><a href="#">Forms</a></li>
+
+    <li class="dropdown">
+        <a href="#">Documents ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Government Orders</a>
+            <a href="#">Reports</a>
+            <a href="#">Notices</a>
+        </div>
+    </li>
+
+    <li>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    </li>
+
+</ul>
+
+</nav>
+
+<!-- IMAGE GALLERY -->
+
+<div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=500"
+         alt="Tourist place">
+
+    <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=500"
+         alt="Indian culture">
+
+    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=500"
+         alt="Building">
+
+    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500"
+         alt="Tourism">
+
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500"
+         alt="Forest">
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        Tourism
+    </div>
+
+    <div class="content">
+
+        <h1>Tourism</h1>
+
+        <ul>
+            <li><a href="#">Tourism</a></li>
+
+            <li><a href="#">Festivals</a></li>
+
+            <li><a href="#">Culinary Delight</a></li>
+
+            <li><a href="#">Produce</a></li>
+        </ul>
+
+    </div>
+
+</main>
+
+<!-- SOCIAL MEDIA -->
+
+<div class="social">
+    <span>f</span>
+    <span>𝕏</span>
+</div>
+
+<script>
+
+// SEARCH FUNCTION
+
+function searchPage() {
+
+    let value = document.getElementById("search").value;
+
+    if(value.trim() !== "") {
+        alert("Searching for: " + value);
+    } else {
+        alert("Please enter something to search");
+    }
+
+}
+
+// MENU FUNCTION
+
+function toggleMenu() {
+
+    alert("District Shahdol Menu");
+
+}
+
+</script>
+
+</body>
+</html>
+
