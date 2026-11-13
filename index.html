@@ -212,7 +212,7 @@ body{
 }
 
 .slide.active{
-    display:flex;
+    display:flex !important;
 }
 
 .slide-content{
@@ -247,7 +247,7 @@ body{
     border-radius:4px;
 }
 
-/* VIDEO SLIDER IMAGES (MATCHING THE RECORDING) */
+/* SLIDE IMAGES */
 .slide1{
     background-image:url('https://cdn.s3waas.gov.in/s354229abfcfa5649e7003b83dd4755294/uploads/2023/03/2023031264.jpg');
 }
@@ -268,7 +268,7 @@ body{
     background-image:url('https://cdn.s3waas.gov.in/s354229abfcfa5649e7003b83dd4755294/uploads/2026/01/17676136399307.jpg');
 }
 
-/* SLIDER BUTTONS */
+/* SLIDER CONTROLS */
 .slider-controls{
     position:absolute;
     bottom:20px;
@@ -603,7 +603,7 @@ footer a:hover{
     <div class="digital">Digital Shahdol</div>
 </header>
 
-<!-- NAVBAR (Updated as per video) -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -644,10 +644,9 @@ footer a:hover{
     </div>
 </nav>
 
-<!-- HERO IMAGE SLIDER (Updated with slides from video) -->
+<!-- HERO IMAGE SLIDER -->
 <section class="hero" id="homeSlider">
 
-    <!-- FIRST SLIDE -->
     <div class="slide slide1 active">
         <div class="slide-content">
             <div>
@@ -657,7 +656,6 @@ footer a:hover{
         </div>
     </div>
 
-    <!-- SECOND SLIDE -->
     <div class="slide slide2">
         <div class="slide-content">
             <div>
@@ -667,7 +665,6 @@ footer a:hover{
         </div>
     </div>
 
-    <!-- THIRD SLIDE -->
     <div class="slide slide3">
         <div class="slide-content">
             <div>
@@ -677,7 +674,6 @@ footer a:hover{
         </div>
     </div>
 
-    <!-- FOURTH SLIDE -->
     <div class="slide slide4">
         <div class="slide-content">
             <div>
@@ -687,7 +683,6 @@ footer a:hover{
         </div>
     </div>
 
-    <!-- FIFTH SLIDE -->
     <div class="slide slide5">
         <div class="slide-content">
             <div>
@@ -697,7 +692,6 @@ footer a:hover{
         </div>
     </div>
 
-    <!-- SLIDER CONTROLS -->
     <div class="slider-controls">
         <button onclick="changeSlide(-1)" aria-label="Previous slide">❮</button>
         <button onclick="toggleSlider()" id="pauseBtn" aria-label="Pause slider">Ⅱ</button>
@@ -709,7 +703,6 @@ footer a:hover{
 <!-- MAIN CONTENT -->
 <div class="container">
 
-    <!-- LATEST NEWS -->
     <section class="news">
         <div class="news-title">
             Latest News
@@ -721,7 +714,6 @@ footer a:hover{
         </div>
     </section>
 
-    <!-- QUICK LINKS -->
     <section class="quick-links">
         <a href="directory.html" class="quick-card">
             <div class="quick-icon">🏢</div>
@@ -745,7 +737,6 @@ footer a:hover{
         </a>
     </section>
 
-    <!-- INFORMATION SECTION -->
     <section>
         <div class="section-title">
             <h2>District Information</h2>
@@ -798,7 +789,6 @@ footer a:hover{
     </section>
 </div>
 
-<!-- ABOUT SHAH DOL -->
 <section class="about">
     <div class="container">
         <div class="about-content">
@@ -823,7 +813,6 @@ footer a:hover{
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -852,17 +841,13 @@ footer a:hover{
     </div>
 </footer>
 
-<!-- BACK TO TOP -->
 <button class="top-button" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- JAVASCRIPT -->
 <script>
-// MOBILE NAVIGATION
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("show");
 }
 
-// MOBILE DROPDOWN
 document.querySelectorAll(".dropdown > a").forEach(link => {
     link.addEventListener("click",function(event){
         if(window.innerWidth <= 900){
@@ -872,7 +857,6 @@ document.querySelectorAll(".dropdown > a").forEach(link => {
     });
 });
 
-// IMAGE SLIDER
 let currentSlide = 0;
 let slides = document.querySelectorAll(".slide");
 let sliderTimer;
@@ -895,7 +879,7 @@ function startSlider(){
     clearInterval(sliderTimer);
     if(!sliderPaused){
         sliderTimer = setInterval(function(){
-            changeSlide(1);
+            showSlide(currentSlide + 1);
         },5000);
     }
 }
@@ -908,7 +892,6 @@ function toggleSlider(){
 
 startSlider();
 
-// SEARCH WEBSITE
 function searchSite(){
     let input = document.getElementById("searchInput").value.trim().toLowerCase();
     if(input === ""){
