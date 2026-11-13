@@ -1,1 +1,788 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Documents - District Shahdol</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #111;
+    background: #fff;
+}
+
+/* HEADER */
+
+.header {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #aaa;
+    padding: 10px 4%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 75px;
+    width: 80px;
+    border-radius: 50%;
+    background: #168c35;
+    border: 5px solid #d5b500;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.logo-text {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.logo-text strong {
+    font-size: 23px;
+}
+
+.search {
+    width: 465px;
+    height: 53px;
+    display: flex;
+    border: 2px solid #aaa;
+    border-bottom: 4px solid #705000;
+    border-radius: 10px 10px 0 0;
+}
+
+.search input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search button {
+    width: 10%;
+    border: none;
+    background: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.digital {
+    font-size: 19px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 14px 15px;
+    color: #111;
+    text-decoration: none;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.navbar ul li a:hover {
+    background: #956000;
+    color: white;
+}
+
+.active {
+    background: #956000;
+    color: white !important;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #956000;
+    min-width: 245px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-menu a {
+    color: white !important;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.dropdown-menu a:hover {
+    background: #684300 !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 18px;
+}
+
+/* IMAGE GALLERY */
+
+.gallery {
+    display: flex;
+    gap: 15px;
+    height: 120px;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.gallery img {
+    min-width: 23%;
+    height: 115px;
+    object-fit: cover;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 81%;
+    margin: auto;
+}
+
+.breadcrumb {
+    margin-top: 27px;
+    margin-bottom: 43px;
+    font-size: 16px;
+}
+
+.breadcrumb a {
+    color: #885900;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    padding: 0 8px;
+}
+
+.social {
+    position: absolute;
+    right: 12%;
+    top: 255px;
+    color: #795000;
+    font-size: 22px;
+    display: flex;
+    gap: 15px;
+}
+
+/* DOCUMENTS HEADING */
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+/* FILTER BOX */
+
+.filter-box {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 25px rgba(0,0,0,.09);
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+.filter-box label {
+    width: 265px;
+    color: #895900;
+    font-size: 16px;
+}
+
+.filter-box select {
+    flex: 1;
+    height: 41px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 0 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.filter-box button {
+    background: #956000;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.filter-box button:hover {
+    background: #654000;
+}
+
+/* DOCUMENT TABLE */
+
+.table-title {
+    background: #654000;
+    color: white;
+    padding: 13px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #ffedc9;
+}
+
+th {
+    text-align: left;
+    padding: 13px 14px;
+    color: #654000;
+    font-size: 15px;
+}
+
+td {
+    padding: 17px 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+td:first-child {
+    width: 34%;
+    font-weight: bold;
+}
+
+td:nth-child(2) {
+    width: 33%;
+}
+
+td:last-child {
+    width: 33%;
+}
+
+td a {
+    color: #865400;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+.pdf {
+    color: red;
+    font-size: 19px;
+    margin-left: 5px;
+}
+
+.alternate {
+    display: block;
+    margin-top: 7px;
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+    font-weight: normal;
+}
+
+/* BACK TO TOP */
+
+.top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #956000;
+    color: white;
+    border: none;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 15px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .digital {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .navbar ul {
+        flex-wrap: nowrap;
+    }
+
+    .navbar ul li a {
+        font-size: 13px;
+        padding: 12px 9px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .filter-box {
+        flex-wrap: wrap;
+    }
+
+    .filter-box label {
+        width: 100%;
+    }
+
+    .filter-box select {
+        min-width: 60%;
+    }
+
+    .gallery img {
+        min-width: 45%;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .logo {
+        height: 55px;
+        width: 55px;
+        font-size: 20px;
+    }
+
+    .logo-text strong {
+        font-size: 17px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .gallery {
+        height: 90px;
+    }
+
+    .gallery img {
+        height: 85px;
+        min-width: 75%;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .filter-box {
+        padding: 15px;
+    }
+
+    .filter-box select {
+        width: 100%;
+        flex: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    .social {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo">🏛</div>
+
+        <div class="logo-text">
+            जिला शहडोल<br>
+            <strong>District Shahdol</strong>
+        </div>
+
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="Search">
+        <button onclick="searchDocuments()">⌕</button>
+    </div>
+
+    <div class="digital">
+        <span style="color:#ed7025">●</span>
+        Digital India
+        <small style="display:block;font-size:9px">
+            Power To Empower
+        </small>
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<ul>
+
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+        <a href="#">About District ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">History</a>
+            <a href="#">Geography</a>
+            <a href="#">Administration</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Directory ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Who's Who</a>
+            <a href="#">Officers</a>
+            <a href="#">Contact Directory</a>
+        </div>
+    </li>
+
+    <li><a href="#">Contact revenue officials</a></li>
+
+    <li><a href="#">Covid19 Help Numbers</a></li>
+
+    <li class="dropdown">
+        <a href="#">Departments ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Education</a>
+            <a href="#">Health</a>
+            <a href="#">Police</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Tourism ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">How to Reach</a>
+            <a href="#">Accommodation</a>
+            <a href="#">Tourist Places</a>
+            <a href="#">Festivals</a>
+            <a href="#">Produce</a>
+            <a href="#">Culinary Delights</a>
+        </div>
+    </li>
+
+    <li><a href="#">Forms</a></li>
+
+    <li class="dropdown">
+        <a href="#" class="active">Documents ⌄</a>
+        <div class="dropdown-menu">
+            <a href="#">Office Order</a>
+            <a href="#">General Information</a>
+        </div>
+    </li>
+
+    <li>
+        <span class="menu-icon" onclick="alert('Menu Open')">☰</span>
+    </li>
+
+</ul>
+
+</nav>
+
+<!-- IMAGE GALLERY -->
+
+<div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=500" alt="Place">
+
+    <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=500" alt="Culture">
+
+    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=500" alt="Building">
+
+    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500" alt="Tourism">
+
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500" alt="Forest">
+
+</div>
+
+<!-- SOCIAL MEDIA -->
+
+<div class="social">
+    <span>f</span>
+    <span>𝕏</span>
+</div>
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        ›
+        Documents
+    </div>
+
+    <h1>Documents</h1>
+
+    <!-- FILTER -->
+
+    <div class="filter-box">
+
+        <label>Filter Document category wise</label>
+
+        <select id="category">
+            <option value="all">All</option>
+            <option value="office">Office Order</option>
+            <option value="general">General Information</option>
+            <option value="tender">Tender</option>
+        </select>
+
+        <button onclick="filterDocuments()">⌕ Filter</button>
+
+    </div>
+
+    <!-- DOCUMENTS TABLE -->
+
+    <h3 class="table-title">Documents</h3>
+
+    <div class="table-wrapper">
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>View / Download</th>
+            </tr>
+        </thead>
+
+        <tbody id="documentList">
+
+            <tr data-category="office">
+                <td>
+                    Regarding publication of invitation of interest,
+                    District Panchayat
+                </td>
+
+                <td>30/09/2026</td>
+
+                <td>
+                    <a href="documents/document1.pdf" target="_blank">
+                        View (927 KB)
+                    </a>
+                    <span class="pdf">♧</span>
+
+                    <span class="alternate">
+                        Alternate File :
+                        <a href="documents/document1.pdf" download>
+                            View (927 KB)
+                        </a>
+                        <span class="pdf">♧</span>
+                    </span>
+                </td>
+            </tr>
+
+            <tr data-category="tender">
+                <td>Planning and Statistics tender</td>
+
+                <td>22/07/2026</td>
+
+                <td>
+                    <a href="documents/document2.pdf" target="_blank">
+                        View (679 KB)
+                    </a>
+                    <span class="pdf">♧</span>
+
+                    <span class="alternate">
+                        Alternate File :
+                        <a href="documents/document2.pdf" download>
+                            View (679 KB)
+                        </a>
+                        <span class="pdf">♧</span>
+                    </span>
+                </td>
+            </tr>
+
+            <tr data-category="office">
+                <td>
+                    Tender Notification of District Panchayat
+                    Shahdol Office
+                </td>
+
+                <td>17/04/2026</td>
+
+                <td>
+                    <a href="documents/document3.pdf" target="_blank">
+                        View (1 MB)
+                    </a>
+                    <span class="pdf">♧</span>
+
+                    <span class="alternate">
+                        Alternate File :
+                        <a href="documents/document3.pdf" download>
+                            View (1 MB)
+                        </a>
+                        <span class="pdf">♧</span>
+                    </span>
+                </td>
+            </tr>
+
+            <tr data-category="general">
+                <td>General Information of District Shahdol</td>
+
+                <td>10/03/2026</td>
+
+                <td>
+                    <a href="documents/document4.pdf" target="_blank">
+                        View (500 KB)
+                    </a>
+                    <span class="pdf">♧</span>
+                </td>
+            </tr>
+
+            <tr data-category="tender">
+                <td>District Shahdol New Tender Notice</td>
+
+                <td>05/02/2026</td>
+
+                <td>
+                    <a href="documents/document5.pdf" target="_blank">
+                        View (800 KB)
+                    </a>
+                    <span class="pdf">♧</span>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+</main>
+
+<!-- BACK TO TOP -->
+
+<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<script>
+
+// FILTER DOCUMENTS
+
+function filterDocuments() {
+
+    let category = document.getElementById("category").value;
+
+    let rows = document.querySelectorAll("#documentList tr");
+
+    rows.forEach(function(row) {
+
+        if(category === "all" ||
+           row.dataset.category === category) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+// SEARCH DOCUMENTS
+
+function searchDocuments() {
+
+    let input = document.getElementById("searchInput")
+                       .value.toLowerCase();
+
+    let rows = document.querySelectorAll("#documentList tr");
+
+    rows.forEach(function(row) {
+
+        let text = row.innerText.toLowerCase();
+
+        row.style.display = text.includes(input) ? "" : "none";
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
+
